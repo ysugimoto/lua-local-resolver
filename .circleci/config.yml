@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/workspace
+    docker:
+      - image: ysugimoto/docker-lua-luarocks:latest
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            luarocks install luaunit
+      - restore_cache:
+          keys:
+            - v1-{{ .Branch }}
+      - run:
+          name: Run test
+          command: make test
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
