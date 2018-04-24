@@ -70,7 +70,7 @@ content_by_lua_block {
 }
 ```
 
-No longer you don't need to define environment variable like `REDIS_HOST` at `nginx.conf`:
+No longer you don't need to define environment variable like `REDIS_HOST` at `nginx.conf` :)
 
 
 ## Note
