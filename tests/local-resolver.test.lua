@@ -24,5 +24,15 @@ TestResolver = {}
     lu.assertNil(ip)
   end
 
+  function TestResolver:testRsolveLocaHostV6()
+    local r = Resolver.new("./tests/fixture/hosts_example")
+
+    local ip = r:resolve_v6("localhost")
+    lu.assertEquals(ip, "::1")
+
+    lu.assertEquals(r:resolve_v6("ipv6.com"), "1050:0000:0000:0000:0005:0600:300c:326b")
+    lu.assertNil(r:resolve("ipv6.com"))
+  end
+
 
 os.exit(lu.LuaUnit.run())

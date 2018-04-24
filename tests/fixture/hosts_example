@@ -1,3 +1,11 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when
 127.0.0.1       localhost localhost.localdomain
 192.168.0.1					example.com
 10.0.0.1        amazonaws.com
+some invalid    line.com
+1050:0000:0000:0000:0005:0600:300c:326b ipv6.com
+::1           localhost
