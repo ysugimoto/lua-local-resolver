@@ -1,5 +1,4 @@
 package.path = package.path ..';../?.lua'
-local path = require("path")
 
 local lu = require("luaunit")
 local Resolver = require("local-resolver")
